@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "triattention"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = ["torch>=2.7", "transformers>=5.0,<6", "numpy", "ninja"]
+
+[tool.setuptools.packages.find]
+include = ["triattention*"]
+
+[tool.setuptools.package-data]
+triattention = ["data/*.json", "kernels/cuda/*.cu", "kernels/cuda/*.cuh"]
